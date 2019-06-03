@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Crypto BTC</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link href="css/main.css" rel="stylesheet" type="text/css">       
+        <link href="css/header.css" rel="stylesheet" type="text/css">       
+        <link href="css/footer.css" rel="stylesheet" type="text/css">       
+        <link href="css/fonts.css" rel="stylesheet" type="text/css"> 
+        <script src="js/main.js"></script>
+        <meta name="viewport" content="width=device-width">        
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="left col-6 col-md-5">
+                        <img src="images/logo_big.png">                            
+                    </div>
+                    <div class="center d-none  d-md-block col-md-5">
+                        <form class="example">
+                        <input value="" id"search"  placeholder="Search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    </div>
+                    <div class="right col-6 col-md-2">
+                            <span><a href="#" class="fab fa-telegram-plane"></a></span>
+                            <span><a href="#" class="fab fa-twitter"></a></span>                        
+                            <span><a href="#" class="fab fa-facebook-f"></a></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Mobile filter menu and search -->
+        <div class="filter-menu d-md-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 mx- pl-1" >
+                            <div class="filter" id="filter">
+                            <img src="images/filter.png"><span> FILTER</span>
+                             </div>
+                        </div>
+                        <div class="search-input-wrapper col-9 px-0">
+                        <form id="search-input">
+                                <input type="search" placeholder="Search">
+                        </form>
+                    </div>
+                    </div>
+                </div>
+               
+        </div>
+        <!--Mobile filter popup -->
+        <div id="myModal" class="modal col-12 d-md-none px-0 rounded-0">
+                  <!-- Modal content -->
+                  <div class="modal-content rounded-0">
+                    <div class="container">
+                        <div class="row">
+                            <span class="filter-header col-5">FILTER</span>
+                            <span class="close col-7">&times;</span>
+                        </div>
+                    </div>
+                   
+                    <hr class="no-gutters">
+                    <form>
+                            <div class="form-group">
+                                <label class="form-header" for="orderBy2">Order by</label>
+                                        
+                                <select class="order-by col-12" id="orderBy2">
+                                        <option>Recent</option>
+                                        <option>Top rated</option>
+                                        <option>Expiring</option>
+                                </select>     
+                            </div>
+                            <div class="form-group">
+                                <label class="form-header "  for="rating2">Rating</label>
+                                <select class="rating col-12" id="rating2">
+                                        <option>Any</option>
+                                        <option>4+</option>
+                                        <option>3+</option>
+                                        <option>2+</option>
+                                        <option>1+</option>
+                                </select>
+                            </div>
+                            <p class="form-header">Required tools</p>                                                                        
+                            <div class="form-group container row ">
+                                      <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="telegram2">Telegram
+                                                <input class="form-check-input" type="checkbox" id="telegram2" value="Telegram" checked>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                    </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="facebook2">Facebook
+                                            <input class="form-check-input" type="checkbox" id="facebook2" value="Facebook" checked>
+                                            <span class="checkmark"></span>                                            
+                                        </label> 
+                                      </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="email2">E-Mail 
+                                            <input class="form-check-input" type="checkbox" id="email2" value="E-Mail" checked> 
+                                            <span class="checkmark"></span>   
+                                        </label>                                                                                     
+                                      </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="twitte2">Twitter
+                                            <input class="form-check-input" type="checkbox" id="twitter2" value="Twitter" checked >
+                                            <span class="checkmark"></span> 
+                                        </label>                                                                                        
+                                      </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="phone2">Phone
+                                            <input class="form-check-input" type="checkbox" id="phone2" value="Phone" checked>
+                                            <span class="checkmark"></span> 
+                                        </label>                                                                                        
+                                      </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="bitcointalk2">BitcoinTalk
+                                            <input class="form-check-input" type="checkbox" id="bitcointalk2" value="BitcoinTalk" checked>
+                                            <span class="checkmark"></span>                                                                                                                                        
+                                        </label>  
+                                      </div>
+                                      <div class="form-check col-12 col-md-6">
+                                        <label class="form-check-label" for="others2">Others
+                                            <input class="form-check-input" type="checkbox" id="others2" value="Others" checked>  
+                                            <span class="checkmark"></span>                                             
+                                        </label>  
+                                        
+                                      </div>
+                            </div>
+                            <div class="btn-group">
+                            <button type="submit" class="update-results btn btn-primary rounded-0">UPDATE RESULTS</button>
+                            <button type="submit" class="clear-filters btn btn-primary rounded-0">CLEAR FILTERS</button>
+                        </div>
+                        </form>                  </div>
+                
+        </div>  
+        <!--Main section -->      
+        <main>
+            <!-- Main section of filter and list of companies -->
+            <div class="first-section-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="header col-md-12">
+                            <p>Browse Airdrops</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="container">
+                    <div class="row ">
+                        <!-- Left column for filter -->
+                        <div class="card card-left rounded-0 d-none d-lg-block col-lg-3">
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-header" for="orderBy">Order by</label>
+                                            
+                                    <select class="order-by col-12" id="orderBy">
+                                            <option>Recent</option>
+                                            <option>Top rated</option>
+                                            <option>Expiring</option>
+                                    </select>     
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-header "  for="rating">Rating</label>
+                                    <select class="rating col-12" id="rating">
+                                            <option>Any</option>
+                                            <option>4+</option>
+                                            <option>3+</option>
+                                            <option>2+</option>
+                                            <option>1+</option>
+                                    </select>
+                                </div>
+                                <p class="form-header">Required tools</p>                                                                        
+                                <div class="form-group container row ">
+                                          <div class="form-check col-12 col-md-6">
+                                                <label class="form-check-label" for="telegram">Telegram
+                                                    <input class="form-check-input" type="checkbox" id="telegram" value="Telegram" checked>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                        </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="facebook">Facebook
+                                                <input class="form-check-input" type="checkbox" id="facebook" value="Facebook" checked>
+                                                <span class="checkmark"></span>                                            
+                                            </label> 
+                                          </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="email">E-Mail 
+                                                <input class="form-check-input" type="checkbox" id="email" value="E-Mail" checked> 
+                                                <span class="checkmark"></span>   
+                                            </label>                                                                                     
+                                          </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="twitter">Twitter
+                                                <input class="form-check-input" type="checkbox" id="twitter" value="Twitter" checked>
+                                                <span class="checkmark"></span> 
+                                            </label>                                                                                        
+                                          </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="phone">Phone
+                                                <input class="form-check-input" type="checkbox" id="phone" value="Phone" checked>
+                                                <span class="checkmark"></span> 
+                                            </label>                                                                                        
+                                          </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="bitcointalk">BitcoinTalk
+                                                <input class="form-check-input" type="checkbox" id="bitcointalk" value="BitcoinTalk" checked>
+                                                <span class="checkmark"></span>                                                                                                                                        
+                                            </label>  
+                                          </div>
+                                          <div class="form-check col-12 col-md-6">
+                                            <label class="form-check-label" for="others">Others
+                                                <input class="form-check-input" type="checkbox" id="others" value="Others" checked>  
+                                                <span class="checkmark"></span>                                             
+                                            </label>  
+                                            
+                                          </div>
+                                </div>
+                                <div class="btn-group">
+                                <button type="submit" class="update-results btn btn-primary rounded-0">UPDATE RESULTS</button>
+                                <button type="submit" class="clear-filters btn btn-primary rounded-0">CLEAR FILTERS</button>
+                            </div>
+                            </form>
+                        </div>
+                        <!-- Right column for card list -->
+                        <div class="card card-right rounded-0 col-12 col-lg-9 ">  
+                            <div class="banner banner-big-first">
+                                <img class="img-fluid" src="images/6.jpg">
+                            </div>
+                            <a href="airdrop.html">
+                              
+                                <div class="card-list col-md-12">
+                                    <div class="container">
+                                        <div class="row ">
+                                            <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                                <img class="rounded" src="images/1.png">
+                                            </div>
+                                            <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                                <p class="pinned label"><img src="images/push-pin.svg"> PINNED</p>
+                                                <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                                <p class="value"><span class="price col-2 px-0">$ 29</span><span class="col-10 px-1">estimated value</span></p>
+                                            </div>
+                                            <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                            </div>
+                                        
+                                            <div class="align-self-center social col-8 col-md-2 px-0">
+                                                    <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                    <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                            </div>
+                                            <div class="align-self-center days col-4 col-md-2">
+                                                <p> 12 days left</p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                               
+                                </div>
+                            </a>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/2.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                                <p class="pinned label"><img src="images/push-pin.svg"> PINNED</p>
+                                                <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 9</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/3.jpg">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="superhot label"><img src="images/fire-over-line.svg"> SUPER HOT</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 7</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><img class="half-star" src="images/favorite.svg"></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 3 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/4.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 5</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 12 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/5.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 1</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/1.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 29</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 12 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/2.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 9</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/3.jpg">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 7</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><img class="half-star" src="images/favorite.svg"></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 3 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/4.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 5</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 12 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/5.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 1</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/1.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 29</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 12 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/2.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 9</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/3.jpg">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 7</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><img class="half-star" src="images/favorite.svg"></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 3 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/4.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">Scientificcoin (SNCOIN)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 5</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 12 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="card-list col-md-12">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="align-self-center brand-image col-2 col-md-1 px-0">
+                                            <img class="rounded" src="images/5.png">
+                                        </div>
+                                        <div class="align-self-center main-block col-10 col-md-5 pr-0 mr-0">
+                                            <p class="date">Added: Oct. 4, 2018</p>
+                                            <p class="brand-name">NanoHealthCare (NHCT)</p>
+                                            <p class="value"><span class="price col-2 px-0">$ 1</span><span class="col-10 px-1">estimated value</span></p>
+                                        </div>
+                                        <div class="align-self-center rating col-12 col-md-2 mx-0 px-0">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></span>
+                                            <span><i class="fas fa-star unrated"></i></i></span>
+                                            
+                                        </div>
+                                       
+                                        <div class="align-self-center social col-8 col-md-2 px-0">
+                                                <span class="visible"><div class="emailicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Email is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="telegramicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Telegram is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="phoneicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Phone is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="twittericon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Twitter is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="facebookicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Facebook is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="bitcoinicon"  data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Bitcoin is required for this airdrop"></div></span>
+                                                <span class="visible"><div class="moreicon" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Others is required for this airdrop"></div></span>                                                
+                                        </div>
+                                        <div class="align-self-center days col-4 col-md-2">
+                                            <p> 7 days left</p>
+                                        </div>
+                                     </div>  
+                                </div>
+                               
+                            </div>
+                            <div class="pagination mx-0 px-0">
+                                <div class="container ">
+                                    <div class="row ">
+                                        <div class="previous col-3 mx-0 px-0 no-gutters">
+                                            <p>Previous page</p>
+                                        </div>
+                                        <div class="pages col-7 mx-0 px-0">
+                                            <span>1</span>
+                                            <span>2</span>
+                                            <span class="selected">3</span>
+                                            <span>4</span>
+                                            <span>5</span>
+                                            <span>...</span>
+                                            <span>43</span>
+                                        </div>
+                                         <div class="next mx-0 px-0 col-2">
+                                            <p>Next page</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Text section -->
+            <div class="second-section-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="banner banner-big-first ">
+                                <img class="img-fluid container" src="images/6.jpg">
+                            </div>
+                        <div class="text-block col-12">
+                            
+                            <h4>Don't miss a single crypto airdrop!</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ section with sliders -->
+            <div class="faq-section-wrapper">
+                <div class="container">
+                    <div class="">
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">What is cripto airdrop?</span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>      
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">Lorem ipsum dolor sit amet, consectetur adipisicing?
+                                    </span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">What is cripto airdrop?</span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">Lorem ipsum dolor sit amet, consectetur adipisicing?
+                                    </span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">What is cripto airdrop?</span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">Lorem ipsum dolor sit amet, consectetur adipisicing?
+                                    </span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">What is cripto airdrop?</span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                        <div class="faq col-12">
+                            <div class="question col-12 no-gutters">
+                                <span class="col-11 col-md-9">Lorem ipsum dolor sit amet, consectetur adipisicing?
+                                    </span>
+                                <span class="col-1 col-md-3 opening plus">+</span>
+                                <span class="col-1 col-md-3 opening minus">-</span>
+                                
+                            </div>
+                            <div class="answer col-12">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container  ">
+                    <div class="banner-small  row">
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <img class="img-fluid" src="images/7.jpg">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <img class="img-fluid" src="images/7.jpg">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <img class="img-fluid" src="images/7.jpg">
+                            </div>
+                        </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="page-footer font-small cyan darken-3"> 
+            <div class="container">
+              <div class="row">
+                  <div class="left order-2 col-12 order-md-1 col-md-8">
+                      <p>Airdrop Site.io; All Rights Reserved</p>
+                      <div>
+                        <span><a href="">Disclaimer</a></span>
+                        <span class = "divider"> | </span>
+                        <span><a href="">Terms & Conditions</a></span>
+                        <span class = "divider"> | </span>
+                        <span><a href="">Privacy Policy</a></span>
+                        <span class = "divider"> | </span>
+                        <span><a href="">Adverstisers Disclosure</a></span>
+                        <span class = "divider"> | </span>
+                        <span><a href="">Cookie Policy</a></span>  
+                      </div>
+                  </div>
+                  <div class="right order-1 col-12 order-md-2 col-md-4">
+                        <span><a href="#" class="fab fa-telegram-plane"></a></span>
+                        <span><a href="#" class="fab fa-twitter"></a></span>                        
+                        <span><a href="#" class="fab fa-facebook-f"></a></span>
+                  </div>
+              </div>
+            </div>
+        
+            
+        
+          </footer>
+    </body>
+</html>
