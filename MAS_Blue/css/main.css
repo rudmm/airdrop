@@ -47,7 +47,20 @@ main .block .button{
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
+main .block span.dates{
+  font-size: 10px;
+  font-family: "Montserrat";
+  color: rgb( 205, 205, 205 );
+  text-transform: uppercase;
+  width: 65px;
+  height: 10px;
+  margin-left: 30px;
+}
+
+}
+
 
 }
 
@@ -352,8 +365,13 @@ main .second-section-wrapper .container .row p{
 }
 .pagination{
     margin-top: 30px;
-    font-size:16px;
     font-weight:500;
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb( 66, 66, 66 );
+  line-height: 4.571;
+}
+
 }
  .pagination .pages{
     text-align:center;
