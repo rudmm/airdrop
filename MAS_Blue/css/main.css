@@ -1,5 +1,5 @@
 body{
-    background: #f8f8f8;
+    background: #f9f9f9;
     font-family: 'Montserrat', sans-serif;     
 }
 
@@ -12,7 +12,11 @@ main .blog{
   height: 18px;
   z-index: 357;
 }
-main .block span.categories{
+main .block{
+    background: #fff;
+    margin-bottom: 20px;
+}
+main  .categories{
   font-size: 10px;
   font-family: "Audiowide";
   color: #fff;
@@ -32,6 +36,7 @@ main .block p, main .block h1{
    margin-left: 30px; 
   font-family: "Montserrat";
   color: rgb( 66, 66, 66 );
+  padding-right: 30px;
   
 }
 main .block p{
@@ -47,7 +52,8 @@ main .block .button{
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  position: relative;
+  bottom: 20px;
 }
 main .block span.dates{
   font-size: 10px;
@@ -57,6 +63,30 @@ main .block span.dates{
   width: 65px;
   height: 10px;
   margin-left: 30px;
+  position: relative;
+  bottom: 17px;
+}
+main .place{
+    background: #fff;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+main .place img{
+    border-radius: 3px;
+}
+main .place p {
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb( 66, 66, 66 );
+  line-height: 1.333;
+  margin: 0;
+
+}
+main .place .row{
+    margin-bottom: 30px;
+}
+
+
 }
 
 }
