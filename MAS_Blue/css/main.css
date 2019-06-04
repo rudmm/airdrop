@@ -23,7 +23,7 @@ main  .categories{
   background: #9b9b9b;
   text-transform: uppercase;
   text-align: right;
-  padding: 1px;
+  padding: 3px;
 }
 main .block p.list{
     margin-top: -15px;
@@ -84,6 +84,18 @@ main .place p {
 }
 main .place .row{
     margin-bottom: 30px;
+}
+main .cat h3{
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb( 41, 82, 255 );
+  margin-top: 50px;
+}
+main .cat .cat-list span{
+    white-space: nowrap;
+
+}
+
 }
 
 

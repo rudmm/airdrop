@@ -7,21 +7,23 @@ body{
 main .blog{
   font-size: 18px;
   font-family: "Montserrat";
-  color: rgb( 235, 65, 59 );
+  color: rgb( 41, 82, 255 );
   width: 39px;
   height: 18px;
   z-index: 357;
 }
-
-
-main .block span.categories{
+main .block{
+    background: #fff;
+    margin-bottom: 20px;
+}
+main  .categories{
   font-size: 10px;
   font-family: "Audiowide";
   color: #fff;
   background: #9b9b9b;
   text-transform: uppercase;
   text-align: right;
-  padding: 1px;
+  padding: 3px;
 }
 main .block p.list{
     margin-top: -15px;
@@ -34,13 +36,14 @@ main .block p, main .block h1{
    margin-left: 30px; 
   font-family: "Montserrat";
   color: rgb( 66, 66, 66 );
+  padding-right: 30px;
   
 }
 main .block p{
     line-height: 1.714;
 }
 main .block .button{
-  background-color: rgb( 235, 65, 59 );
+  background-color:rgb(235,68,62);
   color: #fff;
   width: 166px;
   height: 44px;
@@ -49,7 +52,8 @@ main .block .button{
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  position: relative;
+  bottom: 20px;
 }
 main .block span.dates{
   font-size: 10px;
@@ -59,6 +63,37 @@ main .block span.dates{
   width: 65px;
   height: 10px;
   margin-left: 30px;
+  position: relative;
+  bottom: 17px;
+}
+main .place{
+    background: #fff;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+main .place img{
+    border-radius: 3px;
+}
+main .place p {
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb( 66, 66, 66 );
+  line-height: 1.333;
+  margin: 0;
+
+}
+main .place .row{
+    margin-bottom: 30px;
+}
+main .cat h3{
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb(235,68,62);
+  margin-top: 50px;
+}
+main .cat .cat-list span{
+    white-space: nowrap;
+
 }
 
 main .first-section-wrapper{
