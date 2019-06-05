@@ -54,6 +54,9 @@ main .first p{
   color: rgb( 66, 66, 66 );
   line-height: 1.714;
 }
+main .first p:nth-of-type(1){
+    margin-top: 30px;
+}
 main .first h2{
   font-size: 18px;
   font-family: "Montserrat";
