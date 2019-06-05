@@ -3,6 +3,47 @@ body{
     font-family: 'Montserrat', sans-serif;     
 }
 /* Left column */
+main .required-tools{
+    font-size:14px;
+    margin-right:5px;
+}
+
+main span img{
+    height:14px;
+    margin-right:2px;
+}
+main  .categories{
+  font-size: 10px;
+  font-family: "Audiowide";
+  color: #fff;
+  background: #9b9b9b;
+  text-transform: uppercase;
+  text-align: right;
+  padding: 3px;
+}
+main .first{
+    margin-top: 30px;
+}
+main .first h1{
+  font-size: 30px;
+  font-family: "Montserrat";
+  color: rgb( 66, 66, 66 );
+  margin-top: 20px;
+}
+main .dates{
+    font-size: 10px;
+  font-family: "Montserrat";
+  color: rgb( 205, 205, 205 );
+  text-transform: uppercase;
+  width: 65px;
+  height: 10px;
+  margin-left: 30px;
+}
+main .social{
+    float: right;
+}
+
+}
 .section{
     background-color:white;
     padding:20px 20px 20px 20px;    
@@ -151,17 +192,8 @@ body{
     font-size:18px;
     margin-bottom:0px;
 }
-.section-second .instructions .required-tools{
-    font-size:14px;
-    margin-right:5px;
-}
-.section-second .instructions hr{
-    margin-top:10px;
-}
-.section-second .instructions span img{
-    height:14px;
-    margin-right:2px;
-}
+
+
 .section-second .instructions span .email{
     height:16px;
 }    
